@@ -31,21 +31,22 @@
 
 total_tickets_amount = 750
 
-
 invested_budget_amount = 1000000
 
 email_content =
-  "Mr Director, we calculated our budgetary costs very accurately! \n" +
-  "Totally, we spent $#{invested_budget_amount} dollars. \n" +
-  "To make this money back, our financial advisor propose to \n" +
-  "sell remaining cinema tickets a bit overpriced, to cover our lost budget. \n" +
-  "Estimated price for one ticket in this case is $#{total_tickets_amount + invested_budget_amount}." +
-  "\n\n( I hope, that our little trick remain unnoticed by the cops, are you agree, Mister? )\n\n"
+  "Hi Mr Gordon. As we agreed, I hired a pirate team, who broke our payment processor.\n" +
+  "Totally, we spent $#{invested_budget_amount} dollars on this film. \n" +
+  "To make this money back, Finance Committee with financial advisors made the decision \n" +
+  "to allow us to sell remaining cinema tickets a bit overpriced, to cover our lost budget. \n\n" +
+  "After some code broking, estimated price for one ticket is $#{total_tickets_amount + invested_budget_amount}." +
+  "\n\n( I hope, that our little trick remain unnoticed by the cops, and by Mr Adam Stain.)\n\n" +
   "\n\nBest Regards\nJonson Smith\nBusiness Analytic\nPP-LTD Industries\n\n"
 
 # Construct film title:
-film_trilogy_prefix = "Jackie Chan"
-film_series_name = "Drunken Master"
+
+film_trilogy_prefix = "Brand Kung Fu"
+
+film_series_name = "CK: Calvin Klein history"
 
 film_email_subject = film_trilogy_prefix + film_series_name
 
@@ -78,10 +79,7 @@ puts "RSA generating is success:"; sleep TL_ENDPOINT;
 sleep TL_ENDPOINT; key = OpenSSL::PKey::RSA.new; puts key; sleep TL_ENDPOINT;
 
 print "#{'Mailing server connecting'}"
-(2*(17-12)/2).times do
-  sleep 0.1; print '.'
-end
-print("connected.");sleep 2;
+(2*(17-12)/2).times do; sleep 0.1; print '.'; end; print("connected.");sleep 2;
 POST_HEADERS = { "Content-Type" => "text/xml; charset=utf-8", 'User-Agent' => 'VP;' }
 puts "\n\n Email sending..";sleep 1; "\n Sender: Paramount Pictures Corporation".split('').each do |c|
   putc c; sleep SSL_HTTP_XSR;
